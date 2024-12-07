@@ -1,11 +1,11 @@
-import Link from "next/link";
-import styles from "../../styles/LoginForm.module.css";
+import Link from 'next/link';
+import styles from '../../styles/LoginForm.module.css';
 
 export default function AdminLogin() {
   const handleLogin = (e) => {
     e.preventDefault();
     // Add login logic for admins here
-    alert("Admin login successful!");
+    alert('Admin login successful!');
   };
 
   return (

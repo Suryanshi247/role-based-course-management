@@ -1,32 +1,36 @@
-.loginForm {
-    background: #fff;
-    padding: 2rem;
-    margin: 2rem auto;
+/* Scoped styles for the Login Form */
+.container {
     max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .loginForm h2 {
-    margin-bottom: 1.5rem;
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   
-  .loginForm input {
-    display: block;
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .loginForm button {
-    width: 100%;
-    padding: 0.75rem;
-    background: #0070f3;
-    color: #fff;
+  .submitButton {
+    padding: 10px;
+    background-color: #0070f3;
+    color: white;
     border: none;
     border-radius: 4px;
-    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: #005bb5;
+  }
+  
+  /* Scoped styles for h1 */
+  .loginTitle {
+    font-size: 1.8rem;
+    color: #0070f3;
+    text-align: center;
+    margin-bottom: 20px;
   }
   

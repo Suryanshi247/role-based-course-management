@@ -1,0 +1,88 @@
+/* General Dashboard Layout */
+.dashboard {
+    font-family: 'Arial', sans-serif;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  .dashboard h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard h2 {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    color: #444;
+    border-bottom: 2px solid #0070f3;
+    display: inline-block;
+    padding-bottom: 0.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .courseGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .feedbackSection {
+    background: #fff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+  }
+  
+  .feedbackSection textarea {
+    width: 100%;
+    min-height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+  
+  .feedbackButton {
+    background-color: #0070f3;
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+  
+  .feedbackButton:hover {
+    background-color: #005bb5;
+  }
+  
+  /* Enrolled Courses Section */
+  .enrolledCourses {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .enrolledCourses p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .enrolledCourses strong {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+    color: #333;
+  }
+  

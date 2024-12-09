@@ -36,7 +36,9 @@ export default function StudentDashboard() {
   return (
     <ProtectedRoute role="student">
       <div className={styles.dashboard}>
-        <h1>Student Dashboard</h1>
+        <h1>Welcome to the Student Dashboard</h1>
+
+        {/* Section: Available Courses */}
         <h2>Available Courses</h2>
         <div className={styles.courseGrid}>
           {mockCourses.map((course) => (
@@ -50,24 +52,19 @@ export default function StudentDashboard() {
             />
           ))}
         </div>
+
+        {/* Section: Feedback */}
         <div className={styles.feedbackSection}>
           <h2>Submit Your Feedback</h2>
-          <textarea
-            placeholder="Write your feedback here..."
-            className={styles.feedbackInput}
-          />
-          <button
-            className={styles.feedbackButton}
-            onClick={() => handleRatingSubmit("Your feedback")}
-          >
-            Submit
-          </button>
+          <RatingSystem onSubmitRating={handleRatingSubmit} />
         </div>
+
+        {/* Section: Enrolled Courses */}
         <div className={styles.enrolledCourses}>
           <h2>Your Enrolled Courses</h2>
           {purchasedCourses.length > 0 ? (
             purchasedCourses.map((course) => (
-              <div key={course.id}>
+              <div key={course.id} className={styles.enrolledCourse}>
                 <strong>{course.title}</strong>
                 <p>{course.description}</p>
               </div>

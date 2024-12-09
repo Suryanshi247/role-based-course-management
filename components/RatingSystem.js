@@ -7,6 +7,14 @@ export default function RatingSystem({ onSubmitRating }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!rating) {
+      alert("Please select a rating.");
+      return;
+    }
+    if (!review) {
+      alert("Please write a review.");
+      return;
+    }
     onSubmitRating({ rating, review });
     setRating(0);
     setReview("");

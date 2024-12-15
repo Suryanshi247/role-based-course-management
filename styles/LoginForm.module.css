@@ -1,35 +1,105 @@
-/* Scoped styles for the Login Form */
+/* Container that holds everything */
 .container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4e73df, #1cc88a); /* Gradient background */
+    color: white;
+    font-family: 'Arial', sans-serif;
 }
 
+/* Form styling */
 .form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
+/* Scoped title for the header */
+.title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #f1f1f1;
+    font-weight: 700;
+}
+
+/* Scoped input field styling */
+.inputField {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 1rem;
+    width: 100%;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+/* Focused state for the input fields */
+.inputField:focus {
+    border-color: #4e73df;
+    outline: none;
+    box-shadow: 0 0 5px rgba(78, 115, 223, 0.8);
+}
+
+/* Scoped button styling */
 .submitButton {
-  padding: 10px;
-  background-color: #0070f3;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+    padding: 15px;
+    border: none;
+    background-color: #4e73df;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Button hover effect */
 .submitButton:hover {
-  background-color: #005bb5;
+    background-color: #2e59d9;
+    transform: scale(1.05);
 }
 
-/* Scoped styles for h1 */
-.loginTitle {
-  font-size: 1.8rem;
-  color: #0070f3;
-  text-align: center;
-  margin-bottom: 20px;
+/* Back link styling */
+.backLink {
+    color: #f1f1f1;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-top: 20px;
+}
+
+/* Back link hover effect */
+.backLink:hover {
+    color: #1cc88a;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .form {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .submitButton {
+        font-size: 1rem;
+    }
 }

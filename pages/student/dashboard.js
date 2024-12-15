@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CourseCard from "../../components/CourseCard";
 import RatingSystem from "../../components/RatingSystem";
-import ProtectedRoute from "../../components/ProtectedRoute";
+//import ProtectedRoute from "../../components/ProtectedRoute";
 import styles from "../../styles/StudentDashboard.module.css";
 
 const mockCourses = [
@@ -34,7 +34,7 @@ export default function StudentDashboard() {
   };
 
   return (
-    <ProtectedRoute role="student">
+   // <ProtectedRoute role="student">
       <div className={styles.dashboard}>
         <h1>Welcome to the Student Dashboard</h1>
 
@@ -74,6 +74,6 @@ export default function StudentDashboard() {
           )}
         </div>
       </div>
-    </ProtectedRoute>
+   // </ProtectedRoute>
   );
 }

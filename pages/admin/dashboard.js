@@ -1,12 +1,13 @@
-import ProtectedRoute from "../../components/ProtectedRoute";
+// pages/admin.js
+// pages/admin/dashboard.js
+import AdminDashboard from '../../components/AdminDashboard'; // Adjust the path to the correct location
+import styles from "../../styles/AdminDashboard.module.css"; // Import styles
 
-export default function AdminDashboard() {
+export default function AdminPage() {
   return (
-    <ProtectedRoute role="admin">
-      <div>
-        <h1>Admin Dashboard</h1>
-        <p>Manage Courses, Users, and Ratings here.</p>
-      </div>
-    </ProtectedRoute>
+    <div className={styles.container}> {/* Apply a container class for layout */}
+      <AdminDashboard /> {/* Render AdminDashboard component */}
+    </div>
   );
 }
+

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import ProfileForm from "../../components/ProfileForm";
-import CourseManager from "../../components/CourseManager";
-import FeedbackViewer from "../../components/FeedbackViewer";
-import styles from "../../styles/InstructorPage.module.css";
+import ProfileForm from "../components/ProfileForm";
+import CourseManager from "../components/CourseManager";
+import FeedbackViewer from "../components/FeedbackViewer";
+import styles from "../styles/InstructorPage.module.css";
 
 export default function InstructorPage() {
   const [courses, setCourses] = useState([]);

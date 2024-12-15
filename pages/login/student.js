@@ -1,23 +1,22 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router'; // Import the useRouter hook
-import { useState } from 'react'; // Import useState for managing input values
-import styles from '../../styles/LoginForm.module.css';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import styles from '../../styles/LoginForm.module.css'; // Correctly import the CSS module
 
-export default function StudentLogin() {
-  const router = useRouter(); // Initialize the router
+export default function AdminLogin() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Example credentials (replace this with API call logic)
+    // Example admin credentials (replace with actual credentials or API logic)
     const validEmail = 'student@example.com';
     const validPassword = 'student123';
 
     if (email === validEmail && password === validPassword) {
-      alert('Student login successful!');
-      router.push('/student/dashboard'); // Navigate to /student/dashboard after successful login
+      alert('student login successful!');
+      router.push('/student/dashboard');  // Redirect to /admin/dashboard after login
     } else {
       alert('Invalid email or password. Please try again.');
     }
@@ -25,7 +24,7 @@ export default function StudentLogin() {
 
   return (
     <div className={styles.container}>
-      <h1>Student Login</h1>
+      <h1 className={styles.title}>Student Login</h1>  {/* Use the title class */}
       <form onSubmit={handleLogin} className={styles.form}>
         <label htmlFor="email">Email:</label>
         <input
@@ -33,7 +32,7 @@ export default function StudentLogin() {
           id="email"
           name="email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)} // Update email state
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
         <label htmlFor="password">Password:</label>
@@ -42,14 +41,11 @@ export default function StudentLogin() {
           id="password"
           name="password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)} // Update password state
+          onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit" className={styles.submitButton}>
-          Login
-        </button>
+        <button type="submit" className={styles.submitButton}>Login</button>
       </form>
-      <Link href="/">Back to Home</Link>
     </div>
   );
 }

@@ -1,23 +1,22 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router'; // Import the useRouter hook
-import { useState } from 'react'; // Import useState for managing input values
-import styles from '../../styles/LoginForm.module.css';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import styles from '../../styles/LoginForm.module.css'; // Correctly import the CSS module
 
 export default function AdminLogin() {
-  const router = useRouter(); // Initialize the router
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Example credentials (replace this with API call logic)
+    // Example admin credentials (replace with actual credentials or API logic)
     const validEmail = 'admin@example.com';
     const validPassword = 'admin123';
 
     if (email === validEmail && password === validPassword) {
       alert('Admin login successful!');
-      router.push('/admin/dashboard'); // Navigate to /admin/dashboard after successful login
+      router.push('/admin/dashboard');  // Redirect to /admin/dashboard after login
     } else {
       alert('Invalid email or password. Please try again.');
     }
@@ -25,7 +24,7 @@ export default function AdminLogin() {
 
   return (
     <div className={styles.container}>
-      <h1>Admin Login</h1>
+      <h1 className={styles.title}>Admin Login</h1>  {/* Scoped class name */}
       <form onSubmit={handleLogin} className={styles.form}>
         <label htmlFor="email">Email:</label>
         <input
@@ -33,7 +32,8 @@ export default function AdminLogin() {
           id="email"
           name="email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)} // Update email state
+          onChange={(e) => setEmail(e.target.value)}
+          className={styles.inputField}  
           required
         />
         <label htmlFor="password">Password:</label>
@@ -42,14 +42,13 @@ export default function AdminLogin() {
           id="password"
           name="password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)} // Update password state
+          onChange={(e) => setPassword(e.target.value)}
+          className={styles.inputField}  
           required
         />
-        <button type="submit" className={styles.submitButton}>
-          Login
-        </button>
+       <button type="submit" className={styles.submitButton}>Login</button>
+
       </form>
-      <Link href="/">Back to Home</Link>
     </div>
   );
 }

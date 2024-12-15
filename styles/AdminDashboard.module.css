@@ -69,12 +69,12 @@
   background-color: #005bb5;
 }
 
-ul {
+.ul {
   list-style: none;
   padding: 0;
 }
 
-li {
+.li {
   background: white;
   padding: 0.5rem 1rem;
   margin-bottom: 0.5rem;

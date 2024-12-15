@@ -1,23 +1,22 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router'; // Import the useRouter hook
-import { useState } from 'react'; // Import useState for managing input values
-import styles from '../../styles/LoginForm.module.css';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import styles from '../../styles/LoginForm.module.css'; // Correctly import the CSS module
 
-export default function InstructorLogin() {
-  const router = useRouter(); // Initialize the router
+export default function AdminLogin() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Example credentials (replace this with API call logic)
+    // Example admin credentials (replace with actual credentials or API logic)
     const validEmail = 'instructor@example.com';
-    const validPassword = 'instructor123';
+    const validPassword = 'student123';
 
     if (email === validEmail && password === validPassword) {
-      alert('Instructor login successful!');
-      router.push('/instructor/dashboard'); // Navigate to /instructor/dashboard after successful login
+      alert('student login successful!');
+      router.push('/instructor/dashboard');  // Redirect to /admin/dashboard after login
     } else {
       alert('Invalid email or password. Please try again.');
     }
@@ -25,33 +24,28 @@ export default function InstructorLogin() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.loginTitle}>Instructor Login</h1>
+      <h1 className={styles.title}>Student Login</h1>  {/* Use the title class */}
       <form onSubmit={handleLogin} className={styles.form}>
-        <label htmlFor="email" className={styles.formLabel}>Email:</label>
+        <label htmlFor="email">Email:</label>
         <input
           type="email"
           id="email"
           name="email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)} // Update email state
-          className={styles.formInput}
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
-        <label htmlFor="password" className={styles.formLabel}>Password:</label>
+        <label htmlFor="password">Password:</label>
         <input
           type="password"
           id="password"
           name="password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)} // Update password state
-          className={styles.formInput}
+          onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit" className={styles.submitButton}>
-          Login
-        </button>
+        <button type="submit" className={styles.submitButton}>Login</button>
       </form>
-      <Link href="/" className={styles.link}>Back to Home</Link>
     </div>
   );
 }
